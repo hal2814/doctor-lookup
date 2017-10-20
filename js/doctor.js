@@ -25,16 +25,16 @@ export class Doctor {
       let body = JSON.parse(response);
        for(let i = 0; i < body.data.length; ++i){
          $('#picture').append("<img src='" + body.data[i].profile.image_url + "'>");
-         $('#name').append("<h3>Doctor name: " + body.data[i].practics[i].name + "</h3>");
-         if(body.data[i].practics[i].accepts_new_patients){
+         $('#name').append("<h3>Doctor name: " + body.data[i].practices[i].name + "</h3>");
+         if(body.data[i].practices[i].accepts_new_patients){
            $('#newPatients').append("<h3>Accepting new patients: Yes</h3>");
          }else{
            $('#newPatients').append("<h3>Accepting new patients: No</h3>");
          }
-         $('#city').append("<h4>City: " + body.data[i].practics[i].visit_address.city + "</h4>");
-         $('#state').append("<h4>State: " + body.data[i].practics[i].visit_address.state_long + "</h4>");
-         $('#street').append("<h4>Street: " + body.data[i].practics[i].visit_address.street + "</h4>");
-         $('#zip').append("<h4>Zip: " + body.data[i].practics[i].visit_address.zip + "</h4>");
+         $('#city').append("<h4>City: " + body.data[i].practices[i].visit_address.city + "</h4>");
+         $('#state').append("<h4>State: " + body.data[i].practices[i].visit_address.state_long + "</h4>");
+         $('#street').append("<h4>Street: " + body.data[i].practices[i].visit_address.street + "</h4>");
+         $('#zip').append("<h4>Zip: " + body.data[i].practices[i].visit_address.zip + "</h4>");
          $('#phone').append("<h4>Phone: " + body.data[i].practices[i].phones[i].number + "</h4>");
          $('#bio').append("<h4>Bio: " + body.data[i].bio + "</h4>");
        }

@@ -21,7 +21,7 @@ $(document).ready(function() {
     //promise will return first name, last name, address, phone, website, and accepting patients status
     //practices(name,accepts_new_patients,visit_address(city,state_long,street,zip),phones(number)),profile(image_url),bio
 
-    myDoctor.callTest(promise);
-    // myDoctor.callApi(promise);
+    // myDoctor.callTest(promise);
+    myDoctor.callApi(promise);
   });
 });
