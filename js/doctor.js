@@ -23,6 +23,7 @@ export class Doctor {
   callApi(promise){
     promise.then(function(response) {
       let body = JSON.parse(response);
+      if(body.meta.total > 0){
        for(let i = 0; i < body.data.length +1; ++i){
          $('.output').prepend("Bio: <h6>" + body.data[i].profile.bio + "</h6><br>");
          $('.output').prepend("Phone: <h4>" + body.data[i].practices[0].phones[0].number + "</h4>");
@@ -39,6 +40,9 @@ export class Doctor {
          $('.output').prepend("Doctor name: <h3>Dr. " + body.data[i].profile.first_name + " " + body.data[i].profile.middle_name + " " + body.data[i].profile.last_name +"</h3>");
          $('.output').prepend("<hr><img src='" + body.data[i].profile.image_url + "'><br>");
        }
+     }else{
+       $('.output').prepend("<div class='error'><h3>Sorry, no doctors meet this criteria</h3><img src='img/error.gif'></div><br>")
+     }
     }, function(error) {
       $('.showErrors').text(`There was an error processing your request: ${error.message}`);
     });
