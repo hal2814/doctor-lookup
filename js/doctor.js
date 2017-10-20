@@ -23,21 +23,21 @@ export class Doctor {
   callApi(promise){
     promise.then(function(response) {
       let body = JSON.parse(response);
-       for(let i = 0; i < body.data.length; ++i){
-         $('.output').append("<img src='" + body.data[i].profile.image_url + "'>");
-         $('.output').append("Doctor name: <h3>" + body.data[i].practices[i].name + "</h3>");
-         if(body.data[i].practices[i].accepts_new_patients){
-           $('.output').append("Accepting new patients: Yes");
+       for(let i = 0; i < body.data.length +1; ++i){
+         $('.output').append("<img src='" + body.data[i].profile.image_url + "'><br>");
+         $('.output').append("Doctor name: <h3>Dr. " + body.data[i].profile.first_name + " " + body.data[i].profile.middle_name + " " + body.data[i].profile.last_name +"</h3>");
+         $('.output').append("Practice: <h4>" + body.data[i].practices[0].name + "</h4>");
+         if(body.data[i].practices[0].accepts_new_patients){
+           $('.output').append("Accepting new patients: <h4> Yes</h4>");
          }else{
-           $('.output').append("Accepting new patients: No");
+           $('.output').append("Accepting new patients: <h4>No</h4>");
          }
-         $('.output').append("<h4>City: " + body.data[i].practices[i].visit_address.city + "</h4>");
-         $('.output').append("<h4>State: " + body.data[i].practices[i].visit_address.state_long + "</h4>");
-         $('.output').append("<h4>Street: " + body.data[i].practices[i].visit_address.street + "</h4>");
-         $('.output').append("<h4>Zip: " + body.data[i].practices[i].visit_address.zip + "</h4>");
-         $('.output').append("<h4>Phone: " + body.data[i].practices[i].phones[i].number + "</h4>");
-         debugger;
-         $('.output').append("<h4>Bio: " + body.data[i].profile.bio + "</h4><br>");
+         $('.output').append("City: <h4>" + body.data[i].practices[0].visit_address.city + "</h4>");
+         $('.output').append("State: <h4>" + body.data[i].practices[0].visit_address.state_long + "</h4>");
+         $('.output').append("Street: <h4>" + body.data[i].practices[0].visit_address.street + "</h4>");
+         $('.output').append("Zip: <h4>" + body.data[i].practices[0].visit_address.zip + "</h4>");
+         $('.output').append("Phone: <h4>" + body.data[i].practices[0].phones[0].number + "</h4>");
+         $('.output').append("Bio: <h6>" + body.data[i].profile.bio + "</h6><br>");
        }
     }, function(error) {
       $('.showErrors').text(`There was an error processing your request: ${error.message}`);
