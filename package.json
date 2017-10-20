@@ -1,5 +1,5 @@
 {
-  "name": "Doctor lookup",
+  "name": "doctor_lookup",
   "version": "1.0.0",
   "description": "uses an API to find doctors",
   "main": "gulpfile.js",

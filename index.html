@@ -12,5 +12,33 @@
     <title>Doctor Lookup</title>
   </head>
   <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card">
+            <h1>Doctor Lookup Portland</h1>
+          </div>
+          <form class="form-control">
+            <div class="form-group">
+              <label for="issue">Medical Issue: </label>
+              <input id="issue" name="issue" class="form-control" type="text">
+              <label for="docName">Doctor Last Name: </label>
+              <input id="docName" name="docName" class="form-control" type="text">
+              <button type="submit" class="btn btn-info">Find Doctors</button>
+            </div>
+          </form>
+          <div class="col-md-6">
+            <span id="picture"></span>
+            <h3>Doctor name: <span id="name"></span></h3>
+            <h4>City: <span id="city"></span></h4>
+            <h4>State: <span id="state"></span></h4>
+            <h4>Street: <span id="street"></span></h4>
+            <h4>Zip: <span id="zip"></span></h4>
+            <h4>Phone: <span id="phone"></span></h4>
+            <h4>Bio: <span id="bio"></span></h4>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
