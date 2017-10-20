@@ -1,8 +1,4 @@
 export class Doctor {
-  constructor(){
-
-  }
-
 
   makePromise(api_key){
     return new Promise(function(resolve, reject) {
@@ -43,16 +39,6 @@ export class Doctor {
      }else{
        $('.output').prepend("<div class='error'><h3>Sorry, no doctors meet this criteria</h3><img src='img/error.gif'></div><br>")
      }
-    }, function(error) {
-      $('.showErrors').text(`There was an error processing your request: ${error.message}`);
-    });
-  }
-
-  callTest(promise){
-    promise.then(function(response) {
-      let body = JSON.parse(response);
-      debugger;
-      $('#test').text(body.data);
     }, function(error) {
       $('.showErrors').text(`There was an error processing your request: ${error.message}`);
     });
